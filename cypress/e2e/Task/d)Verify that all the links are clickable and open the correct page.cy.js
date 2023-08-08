@@ -6,6 +6,11 @@ describe('Verify all links', () => {
         cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
 
     })
+    afterEach(() => {
+        // This code will run after each test
+        // Reset the state of the application by visiting the initial URL
+        cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+    });
     it('Test case to verify on Home Screen', () => {
         cy.contains('Subscribe to Joget Cloud Managed Services').should('be.visible')
         cy.contains('Please use this form to send in a Subscription Order for Joget Cloud Managed Services. Alternatively, you can send an email to info[@]jogetcloud.com if you have any questions')
@@ -58,7 +63,7 @@ describe('Verify all links', () => {
                 .should('contain', "is an open source platform to easily build enterprise web apps for cloud and mobile.");
 
             // Reset the URL to the original URL ('https://www.jogetcloud.com/subscribe-managed-services.html')
-            cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+           // cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
         });
     });
     it('Joget DX Translation', () => {
@@ -73,7 +78,7 @@ describe('Verify all links', () => {
             cy.get("body").should('contain', "1. Register and activate an account");
 
             // Reset the URL to the original URL ('https://www.jogetcloud.com/subscribe-managed-services.html')
-            cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+           // cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
         });
     })
     it('Joget Marketplace', () => {
@@ -84,7 +89,7 @@ describe('Verify all links', () => {
             cy.contains('Joget Marketplace', { timeout: 10000 }).should('be.visible', { retries: 3 });
             cy.get("#header-info").should('be.visible', "Joget Marketplace");
             cy.get("#mp_partnerBanners").should('contain', "Featured");
-            cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+           // cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
         })
     })
 
@@ -98,7 +103,7 @@ describe('Verify all links', () => {
             cy.contains('www.joget.com', { timeout: 10000 }).should('be.visible', { retries: 3 });
             cy.get("#page-701").should('be.visible', "Download");
             cy.get("#page-701").should('contain', "Community Edition");
-            cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+            //cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
         })
     })
     it('Open Source Repository', () => {
@@ -108,7 +113,7 @@ describe('Verify all links', () => {
             cy.contains('Joget', { timeout: 10000 }).should('be.visible', { retries: 3 });
             cy.get(".pagehead.orghead.border-bottom-0.pt-0 ").should('be.visible', "Pinned");
             cy.get(".pagehead.orghead.border-bottom-0.pt-0 ").should('contain', "Open source no-code/low-code application platform for faster, simpler digital transformation.");
-            cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+           // cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
         })
     })
     it('Joget Cloud in China', () => {
@@ -120,7 +125,7 @@ describe('Verify all links', () => {
             cy.contains('Joget Cloud', { timeout: 20000 }).should('be.visible', { retries: 3 });
             cy.get(".s-title-group ").should('be.visible', "提供低代码/无代码企业应用程序开发和工作流自动化运行平台");
             cy.get(".s-title-group ").should('contain', "由捷得(Joget DX)提供支持");
-            cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
+            //cy.visit('https://www.jogetcloud.com/subscribe-managed-services.html');
         })
     })
 
